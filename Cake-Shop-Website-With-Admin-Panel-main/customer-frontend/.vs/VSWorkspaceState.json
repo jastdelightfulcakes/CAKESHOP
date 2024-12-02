@@ -1,0 +1,10 @@
+{
+  "ExpandedNodes": [
+    "\\src\\components\\Contact",
+    "\\src\\components\\Contact\\ContactForm",
+    "\\src\\components\\Contact\\ContactInfo",
+    "\\src\\components\\Product\\Products",
+    "\\src\\components\\Product\\Products\\SingleProduct"
+  ],
+  "PreviewInSolutionExplorer": false
+}
