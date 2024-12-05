@@ -1,11 +1,11 @@
-import {useOrderedProductsQuery}  from '../../../../services/orderApi'
+// import {useOrderedProductsQuery}  from '../../../../services/orderApi'
 
 
 export const Card = ({ order, index, onCollapse, active }) => {
-  const  orderItems = useOrderedProductsQuery(order.order_Id);
-  console.log(orderItems)
-  if (orderItems.isLoading) return <div>Loading....</div>;
-  if (orderItems.isError) return <h6>An error occured {orderItems.error.error}</h6>;
+  // const  orderItems = useOrderedProductsQuery(order.order_Id);
+  // console.log(orderItems)
+  // if (orderItems.isLoading) return <div>Loading....</div>;
+  // if (orderItems.isError) return <h6>An error occured {orderItems.error.error}</h6>;
 
   
   let activeBar = false;
@@ -54,7 +54,7 @@ export const Card = ({ order, index, onCollapse, active }) => {
           </div>
         </div>
         <div className='profile-orders__content'>
-          <ul>
+          {/* <ul>
             {orderItems.data.map((item, index) => (
               <li key={index}>
                 <img src={`http://127.0.0.1:8000${item.product_Id.imageGallery.image1}`} style={{width:"5rem"}} />
@@ -66,7 +66,7 @@ export const Card = ({ order, index, onCollapse, active }) => {
               Payment Methods:
               <span>Cash on Delivery</span>
             </li>
-          </ul>
+          </ul> */}
         </div>
       </div>
     </>

@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import { Rating } from 'react-simple-star-rating';
-import { getToken } from '../../../services/LocalStorageService';
-import {usePostReviewMutation} from '../../../services/feedbackApi'
+// import { getToken } from '../../../services/LocalStorageService';
+// import {usePostReviewMutation} from '../../../services/feedbackApi'
 
 
 export const ReviewFrom = (props) => {
   const [rating, setRating] = useState(0);
-  const [postReview] = usePostReviewMutation(); 
+  // const [postReview] = usePostReviewMutation(); 
   const [success , setSuccess] = useState(false)
   const [server_error, setServerError] = useState({})
  
@@ -21,18 +21,18 @@ export const ReviewFrom = (props) => {
       product:props.data,
     }
     console.log("data " , actualData)
-    const res = await postReview(actualData)
+    // const res = await postReview(actualData)
 
-    if (res.error) {
-      console.log(typeof (res.error.data.errors))
-      console.log(res.error.data.errors)
-      setServerError(res.error.data.errors)
-    }
-    if (res.data) {
-      console.log(typeof (res.data))
-      console.log(res.data)
-      setSuccess(true)
-    }
+    // if (res.error) {
+    //   console.log(typeof (res.error.data.errors))
+    //   console.log(res.error.data.errors)
+    //   setServerError(res.error.data.errors)
+    // }
+    // if (res.data) {
+    //   console.log(typeof (res.data))
+    //   console.log(res.data)
+    //   setSuccess(true)
+    // }
   }
   // Catch Rating value
   const handleRating = (rate) => {

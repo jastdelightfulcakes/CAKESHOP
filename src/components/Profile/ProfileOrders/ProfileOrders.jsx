@@ -2,15 +2,15 @@ import orderData from 'data/orders/orders';
 import { useState } from 'react';
 import { Card } from './Card/Card';
 import { useSelector } from "react-redux";
-import {useGetOrdersQuery} from '../../../services/orderApi'
+// import {useGetOrdersQuery} from '../../../services/orderApi'
 
 export const ProfileOrders = () => {
   const user = useSelector(state => state.user)
   const [active, setActive] = useState(-1);
-  const response = useGetOrdersQuery(user.id);
-  if (response.isLoading) return <div>Loading....</div>;
-  if (response.isError) return <h6>An error occured {response.error.error}</h6>;
-  const orders = (response.data).slice().reverse();
+  // const response = useGetOrdersQuery(user.id);
+  // if (response.isLoading) return <div>Loading....</div>;
+  // if (response.isError) return <h6>An error occured {response.error.error}</h6>;
+  // const orders = (response.data).slice().reverse();
 
   const handleCollapse = (indx) => {
     if (active === indx) {
@@ -21,8 +21,8 @@ export const ProfileOrders = () => {
   };
   return (
     <>
-      <div className='profile-orders'>
-        <div className='profile-orders__row profile-orders__row-head'>
+      {/* <div className='profile-orders'> */}
+        {/* <div className='profile-orders__row profile-orders__row-head'>
           <div className='profile-orders__col'>date</div>
           <div className='profile-orders__col'>Delivery address</div>
           <div className='profile-orders__col'>amount</div>
@@ -36,8 +36,8 @@ export const ProfileOrders = () => {
             order={order}
             active={active}
           />
-        ))}
-      </div>
+        ))} */}
+      {/* </div> */}
     </>
   );
 };
