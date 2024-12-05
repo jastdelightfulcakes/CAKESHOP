@@ -1,43 +1,42 @@
 import { SocialLogin } from "components/shared/SocialLogin/SocialLogin";
 import router from "next/router";
 import { useState } from 'react';
-import { useRegisterUserMutation } from '../../services/userAuthApi'
-import { storeToken } from '../../services/LocalStorageService';
+// import { useRegisterUserMutation } from '../../services/userAuthApi'
+// import { storeToken } from '../../services/LocalStorageService';
 
 export const Registration = () => {
  
-  const [server_error, setServerError] = useState({})
-  const [registerUser, { isLoading }] = useRegisterUserMutation()
+  // const [server_error, setServerError] = useState({})
+  // const [registerUser, { isLoading }] = useRegisterUserMutation()
   
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const data = new FormData(e.currentTarget);
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   const data = new FormData(e.currentTarget);
 
-    const actualData = {
-      first_Name: data.get('first_Name'),
-      last_Name: data.get('last_Name'),
-      email: data.get('email'),
-      password: data.get('password'),
-      phone_Number: '03000000000',
-      type: "CUSTOMER",
-    }
-    const res = await registerUser(actualData)
-    if (res.error) {
-      console.log(typeof (res.error.data.errors))
-      console.log(res.error.data.errors)
-      setServerError(res.error.data.errors)
-    }
-    if (res.data) {
-      console.log(typeof (res.data))
-      console.log(res.data)
-      storeToken(res.data.token)
-      router.push("/")
-    }
-  }
+  //   const actualData = {
+  //     first_Name: data.get('first_Name'),
+  //     last_Name: data.get('last_Name'),
+  //     email: data.get('email'),
+  //     password: data.get('password'),
+  //     phone_Number: '03000000000',
+  //     type: "CUSTOMER",
+  //   }
+  //   const res = await registerUser(actualData)
+  //   if (res.error) {
+  //     console.log(typeof (res.error.data.errors))
+  //     console.log(res.error.data.errors)
+  //     setServerError(res.error.data.errors)
+  //   }
+  //   if (res.data) {
+  //     console.log(typeof (res.data))
+  //     console.log(res.data)
+  //     storeToken(res.data.token)
+  //     router.push("/")
+  //   }
   return (
     <>
       {/* <!-- BEGIN REGISTRATION --> */}
-      <div className="login registration">
+      {/* <div className="login registration">
         <div className="wrapper">
           <div
             className="login-form js-img"
@@ -127,7 +126,7 @@ export const Registration = () => {
           src="/assets/img/promo-video__decor.jpg"
           alt=""
         />
-      </div>
+      </div> */}
       {/* <!-- REGISTRATION EOF   -->  */}
     </>
   );
