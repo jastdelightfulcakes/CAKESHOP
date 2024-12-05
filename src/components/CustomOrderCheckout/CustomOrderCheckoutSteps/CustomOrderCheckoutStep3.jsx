@@ -1,30 +1,30 @@
 import { useEffect   } from 'react';
 import { useSelector } from "react-redux";
-import {useUpdateOrderMutation , useGetDetaildCustomOrderQuery} from '../../../services/customOrderApi'
+// import {useUpdateOrderMutation , useGetDetaildCustomOrderQuery} from '../../../services/customOrderApi'
 
 export const CustomOrderCheckoutStep3 = (props) => {
-  const [updateOrder] = useUpdateOrderMutation();
+  // const [updateOrder] = useUpdateOrderMutation();
   
   useEffect( async() => {
     const data ={
       id: props.CustomOrder_Id,
       order_Status: "Order Placed",
     }
-    const res= await updateOrder(data)
-      if(res.isError){
-        console.log(res.error.error)
-      }
-      if(res.data){
-         console.log(res.data)
-      }  
+    // const res= await updateOrder(data)
+    //   if(res.isError){
+    //     console.log(res.error.error)
+    //   }
+    //   if(res.data){
+    //      console.log(res.data)
+    //   }  
   
     },[] )
     
-    let customOrder = useGetDetaildCustomOrderQuery(props.CustomOrder_Id)
+    // let customOrder = useGetDetaildCustomOrderQuery(props.CustomOrder_Id)
 
-   if (customOrder.isLoading) return <div>Loading....</div>;
-   if (customOrder.isError) return <h1>An error occured {response.error.error}</h1>;
-     console.log('detaild custom Order', customOrder.data)
+  //  if (customOrder.isLoading) return <div>Loading....</div>;
+  //  if (customOrder.isError) return <h1>An error occured {response.error.error}</h1>;
+  //    console.log('detaild custom Order', customOrder.data)
   return (
     <>
       {/* <!-- BEING CHECKOUT STEP Three -->  */}
@@ -40,7 +40,7 @@ export const CustomOrderCheckoutStep3 = (props) => {
           satisfied with your purchase. and we’ll do our best to continue to
           give you the kind of service you deserve.
         </p>
-        <ul className="checkout-purchase__list">
+        {/* <ul className="checkout-purchase__list">
           <li>
             <span>Order number</span>{customOrder.data.id}
           </li>
@@ -59,7 +59,7 @@ export const CustomOrderCheckoutStep3 = (props) => {
           <li>
             <span>Total Amount</span> {customOrder.data.CustomCake.amount}
           </li>
-        </ul>
+        </ul> */}
         
       </div>
       {/* <!-- CHECKOUT STEP TWO EOF -->  */}

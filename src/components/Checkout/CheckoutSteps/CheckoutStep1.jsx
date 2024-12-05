@@ -5,7 +5,7 @@ import { useDispatch ,useSelector } from 'react-redux';
 import Dropdown from "react-dropdown";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import {usePlaceOrderMutation} from '../../../services/orderApi'
+// import {usePlaceOrderMutation} from '../../../services/orderApi'
 import { setOrder } from '../../../features/orderSlice';
 const countries = [
   { label: "Islamabad", value: "Islamabad" },
@@ -31,7 +31,7 @@ export const CheckoutStep1 = ({ onNext }) => {
   );
   const [userData , setUserData]= useState({}) 
   const data = useSelector(state => state.user)
-  const [PlaceOrder] = usePlaceOrderMutation()
+  // const [PlaceOrder] = usePlaceOrderMutation()
   const  [city, setCity]= useState({}) 
   const  [time, setTime]= useState({}) 
   const [startDate, setStartDate] = useState(new Date());
@@ -84,7 +84,7 @@ export const CheckoutStep1 = ({ onNext }) => {
     }
 
     console.log('these are the actual data',actualData)
-    const res = await PlaceOrder(actualData)
+    // const res = await PlaceOrder(actualData)
 
     if (res.error) {
       console.log(res.error.data.errors)

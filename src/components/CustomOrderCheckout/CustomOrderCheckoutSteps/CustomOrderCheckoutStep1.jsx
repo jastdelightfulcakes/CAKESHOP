@@ -3,7 +3,7 @@ import { useDispatch ,useSelector } from 'react-redux';
 import Dropdown from "react-dropdown";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import {usePlaceCustomOrderMutation} from '../../../services/customOrderApi'
+// import {usePlaceCustomOrderMutation} from '../../../services/customOrderApi'
 
 const countries = [
   { label: "Islamabad", value: "Islamabad" },
@@ -21,7 +21,7 @@ const timezone = [
 export const CustomOrderCheckoutStep1 = ({ onNext , CustomOrder_Id }) => {
   const dispatch = useDispatch()
   const [userData , setUserData]= useState({}) 
-  const [PlaceOrder] = usePlaceCustomOrderMutation()
+  // const [PlaceOrder] = usePlaceCustomOrderMutation()
   const [city, setCity]= useState({}) 
   const [time, setTime]= useState({}) 
   const [startDate, setStartDate] = useState(new Date());
@@ -56,7 +56,7 @@ export const CustomOrderCheckoutStep1 = ({ onNext , CustomOrder_Id }) => {
     }
 
     console.log('these are the actual data',actualData)
-    const res = await PlaceOrder(actualData)
+    // const res = await PlaceOrder(actualData)
 
     if (res.error) {
       console.log(res.error.data.errors)

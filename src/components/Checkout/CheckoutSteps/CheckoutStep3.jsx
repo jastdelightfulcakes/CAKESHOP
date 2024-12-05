@@ -1,24 +1,24 @@
 import { useEffect  ,useRef } from 'react';
 import { useSelector } from "react-redux";
-import {useUpdateOrderMutation} from '../../../services/orderApi'
+// import {useUpdateOrderMutation} from '../../../services/orderApi'
 
 
 export const CheckoutStep3 = () => {
   const order = useSelector(state => state.order)
-  const [updateOrder] = useUpdateOrderMutation();
+  // const [updateOrder] = useUpdateOrderMutation();
   
   useEffect( async() => {
     const data ={
       id: order.id,
       order_Status: "Order Placed",
     }
-    const res= await updateOrder(data)
-      if(res.isError){
-        console.log(res.error.error)
-      }
-      if(res.data){
-         console.log(res.data)
-      }  
+    // const res= await updateOrder(data)
+    //   if(res.isError){
+    //     console.log(res.error.error)
+    //   }
+    //   if(res.data){
+    //      console.log(res.data)
+    //   }  
   
     },[] )
   console.log('order form stor', order)

@@ -1,4 +1,4 @@
-import {  useGetUserCustomOrderQuery} from '../../services/customOrderApi'
+// import {  useGetUserCustomOrderQuery} from '../../services/customOrderApi'
 
 const getCustomOrder_Id = () => {
   if (typeof window !== "undefined") {
@@ -11,16 +11,16 @@ const getCustomOrder_Id = () => {
 export const CustomOrderCheckoutOrders = (props) => {
   
   console.log("card id" ,props.CustomOrder_Id)
-  let customOrder = useGetUserCustomOrderQuery(props.CustomOrder_Id)
+  // let customOrder = useGetUserCustomOrderQuery(props.CustomOrder_Id)
 
-  if (customOrder.isLoading) return <div>Loading....</div>;
-  if (customOrder.isError) return <h1>An error occured {response.error.error}</h1>;
+  // if (customOrder.isLoading) return <div>Loading....</div>;
+  // if (customOrder.isError) return <h1>An error occured {response.error.error}</h1>;
   
   
   
   return (
     <>
-      <div className="checkout-order">
+      {/* <div className="checkout-order">
         <h5>Your Design Cake Order</h5>
         <div className='checkout-order__item'>
           <div className='checkout-order__item-img'>
@@ -60,7 +60,7 @@ export const CustomOrderCheckoutOrders = (props) => {
           total:
           <span>{(customOrder.data.amount).toFixed(2)}</span>
         </div>
-      </div>
+      </div> */}
     </>
   );
 };
