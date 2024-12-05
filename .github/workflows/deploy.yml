@@ -26,10 +26,10 @@ jobs:
           git add .
           git commit -m "Your commit message" || echo "No changes to commit"
 
-      - name: Push changes
+      - name: Push changes using GITHUB_TOKEN for authentication
         run: |
-          git push https://github.com/${{ github.repository }}.git HEAD:${{ github.ref }} \
-            --token ${{ secrets.GITHUB_TOKEN }}
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+          git push origin HEAD:${{ github.ref }}
 
       # Step 2: Set up Node.js
       - name: Set up Node.js
