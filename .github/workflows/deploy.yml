@@ -15,6 +15,12 @@ jobs:
         uses: actions/checkout@v2
         with:
           persist-credentials: false  # Disable persisting GitHub token
+      - name: Configure Git user identity
+        run: |
+          git config user.name "Vishal"
+          git config user.email "jastdelightfulcake@gmail.com"
+      - name: Commit changes
+        run: git commit -m "Your commit message"
 
       # Step 2: Set up Node.js
       - name: Set up Node.js
@@ -27,15 +33,7 @@ jobs:
         run: |
           npm install
           npm run deploy
-
-      # Step 4: Configure Git user identity
-      - name: Configure Git user identity
-        run: |
-          git config user.name "Vishal"
-          git config user.email "jastdelightfulcake@gmail.com"
-      - name: Commit changes
-        run: git commit -m "Your commit message"
-
+          
       # Step 5: Deploy to gh-pages branch
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v3
