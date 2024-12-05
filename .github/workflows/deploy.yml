@@ -20,6 +20,17 @@ jobs:
           git config user.name "Vishal"
           git config user.email "jastdelightfulcake@gmail.com"
 
+      - name: Make changes
+        run: |
+          # Make changes here, if necessary
+          git add .
+          git commit -m "Your commit message" || echo "No changes to commit"
+
+      - name: Push changes
+        run: |
+          git push https://github.com/${{ github.repository }}.git HEAD:${{ github.ref }} \
+            --token ${{ secrets.GITHUB_TOKEN }}
+
       # Step 2: Set up Node.js
       - name: Set up Node.js
         uses: actions/setup-node@v2
