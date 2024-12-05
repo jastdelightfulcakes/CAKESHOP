@@ -1,33 +1,43 @@
 name: Build and Deploy
+
 on:
   push:
     branches:
       - main
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+
     steps:
+      # Step 1: Checkout the code
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          persist-credentials: false
-          
+          persist-credentials: false  # Disable persisting GitHub token
+
+      # Step 2: Set up Node.js
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
           node-version: '16'
 
+      # Step 3: Install dependencies and build the app
       - name: Install and Build
         run: |
           npm install
           npm run deploy
+
+      # Step 4: Configure Git user identity
       - name: Configure Git user identity
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
+
+      # Step 5: Deploy to gh-pages branch
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: gh-pages
-          FOLDER: out
+          BRANCH: gh-pages  # Branch where the deployed content should be pushed
+          FOLDER: out       # Folder to be deployed
