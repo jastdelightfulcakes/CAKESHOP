@@ -7,7 +7,7 @@ export const SingleProduct = ({
   onAddToCart,
   addedInCart,
 }) => {
-  const { access_token } = getToken();
+  //const { access_token } = getToken();
   const { name, oldPrice, price, image, isSale, isNew, id } = product;
   return (
     <>
@@ -32,7 +32,6 @@ export const SingleProduct = ({
               <button
                 disabled={addedInCart}
                 className={`addList ${addedInCart ? "added" : ""}`}
-                onClick={access_token ? () => onAddToCart(id) : () => console.log("log in please")  }
               >
                 <i style={{ marginBottom: "10px" }} className="icon-cart"></i>
                 <span

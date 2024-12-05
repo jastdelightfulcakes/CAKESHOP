@@ -6,11 +6,11 @@ import { Reviews } from "../Reviews/Reviews";
 import { ReviewFrom } from "../ReviewForm/ReviewFrom";
 import { useRouter } from "next/router";
 import { CartContext } from "pages/_app";
-import { getToken } from '../../../services/LocalStorageService';
+// import { getToken } from '../../../services/LocalStorageService';
 
 export const ProductDetails = () => {
   const router = useRouter();
-  const { access_token } = getToken();
+  // const { access_token } = getToken();
   const { cart, setCart } = useContext(CartContext);
 
   const socialLinks = [...socialData];
@@ -173,7 +173,6 @@ export const ProductDetails = () => {
               <div className="product-buttons">
                 <button
                   disabled={addedInCart}
-                  onClick={ access_token ? () => handleAddToCart(): () => console.log('login please')}
                   className="btn btn-icon"
                 >
                   <i className="icon-cart"></i> cart

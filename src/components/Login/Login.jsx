@@ -2,13 +2,13 @@ import { SocialLogin } from "components/shared/SocialLogin/SocialLogin";
 import router from "next/router";
 import {  useState } from 'react';
 import { setUserToken } from '../../features/authSlice';
-import { storeToken } from '../../services/LocalStorageService';
-import { useLoginUserMutation } from '../../services/userAuthApi';
+// import { storeToken } from '../../services/LocalStorageService';
+// import { useLoginUserMutation } from '../../services/userAuthApi';
 import { useDispatch } from 'react-redux';
 
 export const Login = () => {
   const [server_error, setServerError] = useState({})
-  const [loginUser] = useLoginUserMutation()
+  // const [loginUser] = useLoginUserMutation()
   const dispatch = useDispatch()
 
   const handleSubmit = async (e) => {
@@ -19,12 +19,12 @@ export const Login = () => {
       email: data.get('email'),
       password: data.get('password'),
     }
-    const res = await loginUser(actualData)
+    // const res = await loginUser(actualData)
     if (res.error) {
       setServerError(res.error.data.errors)
     }
     if (res.data) {
-      storeToken(res.data.token)
+      // storeToken(res.data.token)
       dispatch(setUserToken({ access_token: res.data.token }))
       router.push("/")
       {res.data.token.type === 'ADMIN' ? router.push("/http://localhost:3001/admin/dashboard") :router.push("/")}  
