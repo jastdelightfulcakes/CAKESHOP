@@ -31,8 +31,8 @@ jobs:
       # Step 4: Configure Git user identity
       - name: Configure Git user identity
         run: |
-          git config user.name "GitHub Actions"
-          git config user.email "actions@github.com"
+          git config user.name "Vishal"
+          git config user.email "jastdelightfulcake@gmail.com"
       - name: Commit changes
         run: git commit -m "Your commit message"
 
