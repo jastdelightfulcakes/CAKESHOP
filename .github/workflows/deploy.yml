@@ -19,8 +19,6 @@ jobs:
         run: |
           git config user.name "Vishal"
           git config user.email "jastdelightfulcake@gmail.com"
-      - name: Commit changes
-        run: git commit -m "Your commit message"
 
       # Step 2: Set up Node.js
       - name: Set up Node.js
