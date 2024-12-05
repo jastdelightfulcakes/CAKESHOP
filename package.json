@@ -4,7 +4,8 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "deploy": "gh-pages -b main -d build"
   },
   "dependencies": {
     "@material-ui/core": "^4.12.4",
